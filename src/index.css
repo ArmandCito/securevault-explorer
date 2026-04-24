@@ -1,0 +1,101 @@
+/* ===========================================================
+   All design tokens from Figma design system applied here
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /*  Colors  */
+  --bg-base:        #0D0F14;
+  --bg-surface:     #13161E;
+  --bg-elevated:    #1C2030;
+  --bg-border:      #252A3A;
+
+  --accent-primary: #4F8EF7;
+  --accent-success: #2DD4A0;
+  --accent-danger:  #F25C5C;
+
+  --text-primary:   #E8EAF0;
+  --text-secondary: #8892A4;
+  --text-disabled:  #4A5268;
+
+  /*  Typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --fs-h1:      24px;
+  --fs-h2:      18px;
+  --fs-h3:      14px;
+  --fs-body:    13px;
+  --fs-caption: 11px;
+  --fs-mono:    12px;
+
+  --fw-semibold: 600;
+  --fw-medium:   500;
+  --fw-regular:  400;
+
+  /*  Spacing (base unit: 4px)  */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /*  Rounds */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --transition: 120ms ease;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/*  Scrollbar  */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-border);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-disabled);
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input {
+  font-family: var(--font-sans);
+  outline: none;
+  border: none;
+}
