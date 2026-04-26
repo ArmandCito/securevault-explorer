@@ -1,0 +1,90 @@
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--bg-base);
+  overflow: hidden;
+}
+
+/* ─────────── TOP BAR ─────────── */
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 var(--space-4);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--bg-border);
+  flex-shrink: 0;
+  gap: var(--space-4);
+}
+
+.topLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.appTitle {
+  font-size: var(--fs-h1);    /* 24px : H1 per design spec */
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.topCenter {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.itemCount {
+  font-size: var(--fs-caption);
+  color: var(--text-secondary);
+}
+
+/* ─────────── MAIN LAYOUT ─────────── */
+.main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Left sidebar : file tree */
+.sidebar {
+  width: 280px;
+  min-width: 200px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--bg-border);
+  background: var(--bg-surface);
+  overflow: hidden;
+}
+
+/* Vertical divider (already covered by border-right above, kept for semantics) */
+.divider {
+  width: 0;
+  flex-shrink: 0;
+}
+
+/* Right detail pane : properties or search results */
+.detailPane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-base);
+  min-width: 0;
+}
