@@ -174,6 +174,8 @@ src/
 │   └── fileUtils.js         # Extension detection, type labels, colors
 │
 └── components/
+    ├── Breadcrumb.jsx        # Wildcard feature component
+    ├── Breadcrumb.module.css 
     ├── Icons.jsx             # All SVG icons (no external icon library)
     ├── FileTree.jsx          # Recursive tree container
     ├── FileTree.module.css
