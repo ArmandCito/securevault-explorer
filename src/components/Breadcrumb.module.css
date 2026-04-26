@@ -1,0 +1,96 @@
+
+.breadcrumb {
+  width: 100%;
+  max-width: 320px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  min-height: 32px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+/* ────── Segments clickable (folder parents) ────── */
+.segment {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: var(--fs-caption);
+  font-family: var(--font-sans);
+  white-space: nowrap;
+  max-width: 120px;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.segment:hover {
+  background-color: rgba(106, 142, 247, 0.12);
+  color: var(--accent-primary);
+}
+
+.segment:hover .segmentIcon {
+  color: var(--accent-primary);
+}
+
+/* ──────  (selected folder) : not clickable ────── */
+.current {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 4px;
+  max-width: 160px;
+}
+
+.currentName {
+  font-size: var(--fs-caption);
+  color: var(--text-primary);
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ────── Icons ────── */
+.segmentIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--text-disabled);
+  transition: color var(--transition);
+}
+
+.segmentName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ────── Separator ────── */
+.separator {
+  display: flex;
+  align-items: center;
+  color: var(--text-disabled);
+  flex-shrink: 0;
+  margin: 0 1px;
+}

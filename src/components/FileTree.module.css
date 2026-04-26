@@ -1,0 +1,19 @@
+.treeContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-2) var(--space-2) var(--space-6);
+  outline: none;
+}
+
+.treeContainer:focus-visible {
+  outline: none;
+}
+
+.vaultLabel {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  color: var(--text-disabled);
+  letter-spacing: 0.08em;
+  padding: var(--space-2) var(--space-2) var(--space-1) var(--space-2);
+  margin-bottom: var(--space-1);
+}
