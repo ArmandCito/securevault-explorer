@@ -1,0 +1,243 @@
+/* ── PropertiesPanel.module.css ── */
+
+/* Outer wrapper : prend tout l'espace droit, centre son contenu */
+.panel {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  overflow-y: auto;
+  gap: var(--space-4);
+}
+
+/* ═══════════════════════════════════════
+   EMPTY STATE
+   Carte centrée, largeur fixe ~320px
+   Lock icon + hint text en haut
+   Keyboard shortcuts widget en dessous
+═══════════════════════════════════════ */
+
+.emptyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Bloc cadenas */
+.lockWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-8) var(--space-6);
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  width: 100%;
+}
+
+.emptyHint {
+  font-size: var(--fs-caption);
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════
+   KEYBOARD SHORTCUTS WIDGET
+   Même largeur que le bloc cadenas
+═══════════════════════════════════════ */
+
+.shortcutsWidget {
+  width: 100%;
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  overflow: hidden;
+}
+
+.shortcutsHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.shortcutsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.shortcutRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px var(--space-3);
+  border-bottom: 1px solid var(--bg-border);
+}
+.shortcutRow:last-child {
+  border-bottom: none;
+}
+
+.keysGroup {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 20px;
+  padding: 0 5px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--bg-border);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-primary);
+}
+
+.shortcutAction {
+  font-size: var(--fs-caption);
+  color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════════════
+   FILLED STATE
+   Carte centrée, largeur fixe ~320px
+   Ne prend pas toute la largeur/hauteur
+═══════════════════════════════════════ */
+
+/* Wrapper vertical : breadcrumb on top + card down */
+.filledWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 320px;
+}
+
+.filledContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  overflow: hidden;
+  /* height auto, no full height */
+}
+
+/* Header : icône + file name */
+.fileHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--bg-border);
+}
+
+.fileIconLarge {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--accent-primary);
+}
+
+.fileName {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-medium);
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Table metadata */
+.metaTable {
+  display: flex;
+  flex-direction: column;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  min-height: 36px;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--bg-border);
+}
+.metaRow:last-child {
+  border-bottom: none;
+}
+
+.metaLabel {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.metaValue {
+  font-size: var(--fs-body);
+  color: var(--text-primary);
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 65%;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  color: var(--accent-success);
+}
+
+/* Bouton Open File */
+.openButton {
+  display: block;
+  width: calc(100% - var(--space-6));
+  margin: var(--space-3) var(--space-3);
+  padding: var(--space-2) 0;
+  background: transparent;
+  border: 1px solid var(--bg-border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.openButton:hover {
+  background-color: var(--bg-elevated);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.openButton:active {
+  background-color: rgba(106, 142, 247, 0.10);
+}
