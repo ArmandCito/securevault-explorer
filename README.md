@@ -12,7 +12,7 @@ A high-performance, keyboard-first file explorer UI for enterprise cloud storage
 ```bash
 # Clone the repository
 git clone https://github.com/ArmandCito/securevault-explorer.git
-cd securevault-explorer
+cd securevault-explorer-main
 
 # Install dependencies
 npm install
