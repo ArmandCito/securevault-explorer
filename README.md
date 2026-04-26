@@ -2,7 +2,7 @@
 
 A high-performance, keyboard-first file explorer UI for enterprise cloud storage. Built for law firms and financial institutions who need to navigate deeply nested folder structures with precision and speed.
 
-**Live Demo:** _[add your deployment URL here]_
+**Live Demo:** _[https://securevault-explorer.vercel.app/]_
 **Design File:** _[https://coat-copy-13470081.figma.site/]_ or simply open the Pdf file found at  _"securevault-explorer/DesignFromFigma.pdf"_
 
 ---
