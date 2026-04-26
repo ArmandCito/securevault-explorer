@@ -69,6 +69,31 @@ export function countItems(nodes) {
 }
 
 /**
+ * findPath
+ * Recursively walks the tree to find the full ancestor chain of a node.
+ *
+ * Returns an array of nodes from root → target, inclusive.
+ * Example: findPath(tree, 'email_1') →
+ *   [ {id:'root_1', name:'01_Legal_Department',...},
+ *     {id:'leg_1',  name:'Active_Cases',...},
+ *     {id:'case_a', name:'Doe_vs_MegaCorp_Inc',...},
+ *     {id:'disc_1', name:'Discovery_Phase',...},
+ *     {id:'email_1',name:'Email_Thread_Jan2024.pdf',...} ]
+ *
+ * Returns null if the id is not found.
+ */
+export function findPath(nodes, targetId) {
+  for (const node of nodes) {
+    if (node.id === targetId) return [node]
+    if (node.type === 'folder' && node.children?.length) {
+      const sub = findPath(node.children, targetId)
+      if (sub) return [node, ...sub]
+    }
+  }
+  return null
+}
+
+/**
  * A simulated "modified" date — derived deterministically from the node id.
  * In a real app this would come from the API.
  */
