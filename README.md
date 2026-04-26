@@ -34,10 +34,10 @@ npm run preview
 
 ## Tech Stack
 
-- **React 18** — component framework
-- **Vite** — build tool and dev server
-- **CSS Modules** — scoped, component-level styles (no Bootstrap, no MUI, no Chakra)
-- **Inter** + **JetBrains Mono** — typography via Google Fonts
+- **React 18** : component framework
+- **Vite** : build tool and dev server
+- **CSS Modules** : scoped, component-level styles (no Bootstrap, no MUI, no Chakra)
+- **Inter** + **JetBrains Mono** : typography via Google Fonts
 
 ---
 
@@ -51,7 +51,7 @@ npm run preview
 | Expand / Collapse | Click any folder to toggle its children |
 | File Selection | Click a file to select it and view its metadata |
 | Properties Panel | Shows Name, Type, Size, and Modified date for the selected file |
-| Keyboard Navigation | Full keyboard control — see shortcuts below |
+| Keyboard Navigation | Full keyboard control : see shortcuts below |
 | Search & Filter | Real-time search with auto-expansion of matching parent folders |
 
 ### Keyboard Shortcuts
@@ -72,10 +72,10 @@ Click on the explorer panel first to enable keyboard navigation.
 The core challenge is rendering a tree of unknown depth from a nested JSON array. The solution uses two components:
 
 **`FileTree`** (container) owns all shared state:
-- `expandedIds` — a `Set<string>` of which folder IDs are open
-- `selectedId` — the currently selected file ID
-- `focusedId` — the keyboard-focused node ID
-- `flatVisibleList` — a flat ordered array of all currently visible nodes, recomputed whenever `expandedIds` changes (used exclusively for keyboard navigation)
+- `expandedIds` : a `Set<string>` of which folder IDs are open
+- `selectedId` : the currently selected file ID
+- `focusedId` : the keyboard-focused node ID
+- `flatVisibleList` : a flat ordered array of all currently visible nodes, recomputed whenever `expandedIds` changes (used exclusively for keyboard navigation)
 
 **`RecursiveNode`** (recursive renderer) is called once per node and calls itself for each child:
 
@@ -94,7 +94,7 @@ State is never duplicated. Each `RecursiveNode` simply looks up whether its own 
 
 ---
 
-## Wildcard Feature — Breadcrumb Trail Navigation
+## Wildcard Feature : Breadcrumb Trail Navigation
 
 **What it is:** When a file is selected, a clickable breadcrumb trail appears at the top of the Properties Panel showing the full path from root to the selected file.
 
@@ -108,10 +108,10 @@ Each folder segment is a button. Clicking it expands that folder in the tree : n
 
 The requirements describe a file explorer with deeply nested folders used by law firms and banks. The core problem that goes unaddressed in the spec is **spatial disorientation**: a user navigating 5–6 levels deep via keyboard loses track of exactly where they are in the vault.
 
-1. **Context at a glance** — The full file path is always visible without having to visually trace the tree.
-2. **Escape hatch** — One click on any ancestor folder jumps back up the hierarchy, replacing a 6-keystroke action with a single click.
-3. **Zero learning curve** — Breadcrumbs are a universal UX pattern understood by every user immediately.
-4. **Enterprise signal** — It demonstrates the interface was designed around real workflows (audit trails, matter organization) not just a demo : exactly the kind of detail that wins a CTO's confidence.
+1. **Context at a glance** : The full file path is always visible without having to visually trace the tree.
+2. **Escape hatch** : One click on any ancestor folder jumps back up the hierarchy, replacing a 6-keystroke action with a single click.
+3. **Zero learning curve** : Breadcrumbs are a universal UX pattern understood by every user immediately.
+4. **Enterprise signal** : It demonstrates the interface was designed around real workflows (audit trails, matter organization) not just a demo : exactly the kind of detail that wins a CTO's confidence.
 
 **Implementation:** `findPath(tree, targetId)` in `fileUtils.js` recursively walks the tree and returns the full ancestor chain. The result flows as a `filePath` prop through `App → PropertiesPanel → Breadcrumb`. Each segment calls `onNavigate(folderId)` which triggers `expandFolder` inside `FileTree` via a registered callback (`onRegisterExpand`).
 
@@ -174,6 +174,8 @@ src/
 │   └── fileUtils.js         # Extension detection, type labels, colors
 │
 └── components/
+    ├── Breadcrumb.jsx        # Wildcard feature component
+    ├── Breadcrumb.module.css 
     ├── Icons.jsx             # All SVG icons (no external icon library)
     ├── FileTree.jsx          # Recursive tree container
     ├── FileTree.module.css
@@ -186,8 +188,3 @@ src/
     └── SearchStatus.module.css
 ```
 
----
-
-## Component Constraints
-
-No Bootstrap, Material UI, Chakra UI, or Ant Design was used. All components are hand-built from scratch using CSS Modules and standard React hooks. The only external UI dependency is Google Fonts for typography.
