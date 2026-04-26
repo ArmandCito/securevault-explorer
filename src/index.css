@@ -1,4 +1,5 @@
-/* ===========================================================
+/* ============================================================
+   SECUREVAULT EXPLORER : Global Design System
    All design tokens from Figma design system applied here
    ============================================================ */
 
@@ -9,7 +10,7 @@
 }
 
 :root {
-  /*  Colors  */
+  /* ─────── Colors ─────── */
   --bg-base:        #0D0F14;
   --bg-surface:     #13161E;
   --bg-elevated:    #1C2030;
@@ -23,7 +24,7 @@
   --text-secondary: #8892A4;
   --text-disabled:  #4A5268;
 
-  /*  Typography */
+  /* ──────── Typography ───────── */
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
@@ -38,7 +39,7 @@
   --fw-medium:   500;
   --fw-regular:  400;
 
-  /*  Spacing (base unit: 4px)  */
+  /* ─────── Spacing (base unit: 4px) ─────── */
   --space-1:  4px;
   --space-2:  8px;
   --space-3:  12px;
@@ -48,7 +49,7 @@
   --space-12: 48px;
   --space-16: 64px;
 
-  /*  Rounds */
+  /* ───────── Misc ─────────── */
   --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 8px;
@@ -70,7 +71,7 @@ body {
   overflow: hidden;
 }
 
-/*  Scrollbar  */
+/* ───────── Scrollbar ───────────── */
 ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
